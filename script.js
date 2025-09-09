@@ -2164,95 +2164,110 @@ document.getElementById("lightbox").addEventListener("click", function(e) {
 
 // 左按钮：上一张（按年份切换）
 document.querySelector(".prev").onclick = function(e) {
-  e.stopPropagation();
-  const yearItems = data.years[currentYear];
-  let yearIndex = yearItems.indexOf(allMagazines[currentIndex]);
+    e.stopPropagation();
+    const yearItems = data.years[currentYear];
+    let yearIndex = yearItems.indexOf(allMagazines[currentIndex]);
 
-  if (yearIndex > 0) {
-    // 当前年份内往前翻
-    currentIndex = allMagazines.indexOf(yearItems[yearIndex - 1]);
-  } else {
-    // 已经是当前年份第一张 -> 跳到前一年最后一张
-    const years = Object.keys(data.years).sort();
-    const currentYearIndex = years.indexOf(currentYear);
-    if (currentYearIndex > 0) {
-      const prevYear = years[currentYearIndex - 1];
-      const prevYearItems = data.years[prevYear];
-      currentYear = prevYear;
-      currentIndex = allMagazines.indexOf(prevYearItems[prevYearItems.length - 1]);
+    if (yearIndex > 0) {
+        // 当前年份内往前翻
+        currentIndex = allMagazines.indexOf(yearItems[yearIndex - 1]);
+    } else {
+        // 已经是当前年份第一张 -> 跳到前一年最后一张
+        const years = Object.keys(data.years).sort();
+        const currentYearIndex = years.indexOf(currentYear);
+        if (currentYearIndex > 0) {
+            const prevYear = years[currentYearIndex - 1];
+            const prevYearItems = data.years[prevYear];
+            currentYear = prevYear;
+            currentIndex = allMagazines.indexOf(prevYearItems[prevYearItems.length - 1]);
+        }
     }
-  }
-  openLightbox(currentIndex);
+    openLightbox(currentIndex);
 };
 
 // 右按钮：下一张（按年份切换）
 document.querySelector(".next").onclick = function(e) {
-  e.stopPropagation();
-  const yearItems = data.years[currentYear];
-  let yearIndex = yearItems.indexOf(allMagazines[currentIndex]);
+    e.stopPropagation();
+    const yearItems = data.years[currentYear];
+    let yearIndex = yearItems.indexOf(allMagazines[currentIndex]);
 
-  if (yearIndex < yearItems.length - 1) {
-    // 当前年份内往后翻
-    currentIndex = allMagazines.indexOf(yearItems[yearIndex + 1]);
-  } else {
-    // 已经是当前年份最后一张 -> 跳到下一年第一张
-    const years = Object.keys(data.years).sort();
-    const currentYearIndex = years.indexOf(currentYear);
-    if (currentYearIndex < years.length - 1) {
-      const nextYear = years[currentYearIndex + 1];
-      const nextYearItems = data.years[nextYear];
-      currentYear = nextYear;
-      currentIndex = allMagazines.indexOf(nextYearItems[0]);
+    if (yearIndex < yearItems.length - 1) {
+        // 当前年份内往后翻
+        currentIndex = allMagazines.indexOf(yearItems[yearIndex + 1]);
+    } else {
+        // 已经是当前年份最后一张 -> 跳到下一年第一张
+        const years = Object.keys(data.years).sort();
+        const currentYearIndex = years.indexOf(currentYear);
+        if (currentYearIndex < years.length - 1) {
+            const nextYear = years[currentYearIndex + 1];
+            const nextYearItems = data.years[nextYear];
+            currentYear = nextYear;
+            currentIndex = allMagazines.indexOf(nextYearItems[0]);
+        }
     }
-  }
-  openLightbox(currentIndex);
+    openLightbox(currentIndex);
 };
 
 // 键盘控制（按年份切换）
 document.addEventListener("keydown", function(e) {
-  const lightbox = document.getElementById("lightbox");
-  if (lightbox.style.display !== "flex") return;
+    const lightbox = document.getElementById("lightbox");
+    let touchStartX = 0;
 
-  const yearItems = data.years[currentYear];
-  let yearIndex = yearItems.indexOf(allMagazines[currentIndex]);
+    lightbox.addEventListener("touchstart", (e) => {
+        touchStartX = e.touches[0].clientX;
+    });
 
-  if (e.key === "ArrowLeft") {
-    if (yearIndex > 0) {
-      // 当前年份内往前翻
-      currentIndex = allMagazines.indexOf(yearItems[yearIndex - 1]);
-    } else {
-      // 已经是当前年份第一张 -> 跳到前一年最后一张
-      const years = Object.keys(data.years).sort();
-      const currentYearIndex = years.indexOf(currentYear);
-      if (currentYearIndex > 0) {
-        const prevYear = years[currentYearIndex - 1];
-        const prevYearItems = data.years[prevYear];
-        currentYear = prevYear;
-        currentIndex = allMagazines.indexOf(prevYearItems[prevYearItems.length - 1]);
-      }
+    lightbox.addEventListener("touchend", (e) => {
+        let touchEndX = e.changedTouches[0].clientX;
+        if (touchStartX - touchEndX > 50) {
+            // 左滑 → 下一张
+            document.querySelector(".next").click();
+        } else if (touchEndX - touchStartX > 50) {
+            // 右滑 → 上一张
+            document.querySelector(".prev").click();
+        }
+    });
+
+    const yearItems = data.years[currentYear];
+    let yearIndex = yearItems.indexOf(allMagazines[currentIndex]);
+
+    if (e.key === "ArrowLeft") {
+        if (yearIndex > 0) {
+            // 当前年份内往前翻
+            currentIndex = allMagazines.indexOf(yearItems[yearIndex - 1]);
+        } else {
+            // 已经是当前年份第一张 -> 跳到前一年最后一张
+            const years = Object.keys(data.years).sort();
+            const currentYearIndex = years.indexOf(currentYear);
+            if (currentYearIndex > 0) {
+                const prevYear = years[currentYearIndex - 1];
+                const prevYearItems = data.years[prevYear];
+                currentYear = prevYear;
+                currentIndex = allMagazines.indexOf(prevYearItems[prevYearItems.length - 1]);
+            }
+        }
+        openLightbox(currentIndex);
+
+    } else if (e.key === "ArrowRight") {
+        if (yearIndex < yearItems.length - 1) {
+            // 当前年份内往后翻
+            currentIndex = allMagazines.indexOf(yearItems[yearIndex + 1]);
+        } else {
+            // 已经是当前年份最后一张 -> 跳到下一年第一张
+            const years = Object.keys(data.years).sort();
+            const currentYearIndex = years.indexOf(currentYear);
+            if (currentYearIndex < years.length - 1) {
+                const nextYear = years[currentYearIndex + 1];
+                const nextYearItems = data.years[nextYear];
+                currentYear = nextYear;
+                currentIndex = allMagazines.indexOf(nextYearItems[0]);
+            }
+        }
+        openLightbox(currentIndex);
+
+    } else if (e.key === "Escape") {
+        lightbox.style.display = "none";
     }
-    openLightbox(currentIndex);
-
-  } else if (e.key === "ArrowRight") {
-    if (yearIndex < yearItems.length - 1) {
-      // 当前年份内往后翻
-      currentIndex = allMagazines.indexOf(yearItems[yearIndex + 1]);
-    } else {
-      // 已经是当前年份最后一张 -> 跳到下一年第一张
-      const years = Object.keys(data.years).sort();
-      const currentYearIndex = years.indexOf(currentYear);
-      if (currentYearIndex < years.length - 1) {
-        const nextYear = years[currentYearIndex + 1];
-        const nextYearItems = data.years[nextYear];
-        currentYear = nextYear;
-        currentIndex = allMagazines.indexOf(nextYearItems[0]);
-      }
-    }
-    openLightbox(currentIndex);
-
-  } else if (e.key === "Escape") {
-    lightbox.style.display = "none";
-  }
 });
 
 renderMagazines();

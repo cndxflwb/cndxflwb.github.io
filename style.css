@@ -219,17 +219,58 @@ footer {
 .lightbox-thumbnails img.active {
     border-color: #f00;
 }
-/* 整屏 Banner */
+
 .banner {
   width: 100%;
-  height: 100vh; /* 整屏 */
-  background: url("banner.jpg") center/cover no-repeat; /* 替换成你的banner图 */
+  height: 100vh;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  position: relative;
   color: #fff;
+  overflow: hidden;
+}
+
+.banner picture, .banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 遮罩层 */
+.banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+}
+
+.banner-content {
+  position: absolute;
+  z-index: 1;
+  max-width: 90%;
+  padding: 1rem;
+}
+
+.banner-content h1 {
+  font-size: 3.5rem;
+  margin: 0;
+}
+
+.banner-content p {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+}
+
+/* 移动端文字缩小 */
+@media (max-width: 768px) {
+  .banner-content h1 {
+    font-size: 2.2rem;
+  }
+  .banner-content p {
+    font-size: 1.1rem;
+  }
 }
 
 /* 遮罩层，让文字更清晰 */
