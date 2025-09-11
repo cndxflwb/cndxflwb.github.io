@@ -458,9 +458,9 @@ const data = {
                 "id": 57,
                 "date": "1996年12月",
                 "issue": "NO.12",
-                "name": "TIME-HONGKONG",
+                "name": "TIME 英文版導讀月刊",
                 "title": "迷樣的王菲",
-                "cover": "1996年12月_NO.12_TIME-HONGKONG_迷樣的王菲.jpg"
+                "cover": "1996年12月_NO.12_TIME_迷樣的王菲.jpg"
             },
             {
                 "id": 58,
@@ -652,9 +652,9 @@ const data = {
                 "id": 81,
                 "date": "1998年11月",
                 "issue": "NO.58",
-                "name": "amoeba-變形蟲",
+                "name": "amoeba-变型虫",
                 "title": "假如王菲是一樣商品……",
-                "cover": "1998年11月_NO.58_amoeba-變形蟲_假如王菲是一樣商品…….jpg"
+                "cover": "1998年11月_NO.58_amoeba-变型虫_假如王菲是一樣商品…….jpg"
             },
             {
                 "id": 82,
@@ -725,9 +725,9 @@ const data = {
                 "id": 90,
                 "date": "1999年10月",
                 "issue": "NO.69",
-                "name": "amoeba-變形蟲",
+                "name": "amoeba-变型虫",
                 "title": "王菲語錄",
-                "cover": "1999年10月_NO.69_amoeba-變形蟲_王菲語錄.jpg"
+                "cover": "1999年10月_NO.69_amoeba-变型虫_王菲語錄.jpg"
             },
             {
                 "id": 91,
@@ -964,11 +964,11 @@ const data = {
             },
             {
                 "id": 120,
-                "date": "2000年",
+                "date": "2000年11月15日",
                 "issue": "NO.133",
                 "name": "当代歌坛",
                 "title": "单身一枝花菲你莫属",
-                "cover": "2000年_NO.133_当代歌坛_单身一枝花菲你莫属.jpg"
+                "cover": "2000年11月15日_NO.133_当代歌坛_单身一枝花菲你莫属.jpg"
             },
             {
                 "id": 121,
@@ -1541,7 +1541,7 @@ const data = {
                 "issue": "NO.4",
                 "name": "Marie-Claire-美麗佳人-TAIWAN",
                 "title": "王菲的新嫁衣",
-                "cover": "2005年4月_NO.4_Marie-Claire-美麗佳人-TAIWAN_王菲的新嫁衣.jpg"
+                "cover": "2005年4月_NO.144_Marie-Claire-美麗佳人-TAIWAN_王菲的新嫁衣.jpg"
             },
             {
                 "id": 192,
