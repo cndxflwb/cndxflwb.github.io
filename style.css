@@ -276,7 +276,7 @@ footer {
 }
 /* 图表模块 */
 .stats {
-  max-width: 900px;
+  max-width: 1200px;
   margin: 3rem auto;
   padding: 1rem;
   background: #fff;
@@ -309,3 +309,4 @@ footer {
   width: 100% !important;
   height: 400px !important;
 }
+
