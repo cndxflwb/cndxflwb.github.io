@@ -278,7 +278,7 @@ footer {
 .stats {
   max-width: 1200px;
   margin: 3rem auto;
-  padding: 0rem;
+  padding-top: 1rem;
   background: #fff;
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.08);
@@ -308,6 +308,7 @@ h2 button:hover {
   width: 100% !important;
   height: 400px !important;
 }
+
 
 
 
