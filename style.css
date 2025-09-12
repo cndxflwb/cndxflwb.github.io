@@ -304,3 +304,8 @@ footer {
 .stats button:hover {
   background: #1d8ed1;
 }
+
+#magazineChart {
+  width: 100% !important;
+  height: 400px !important;
+}
