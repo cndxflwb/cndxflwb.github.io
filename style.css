@@ -278,7 +278,7 @@ footer {
 .stats {
   max-width: 1200px;
   margin: 3rem auto;
-  padding: 1rem;
+  padding: 0rem;
   background: #fff;
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.08);
@@ -309,4 +309,5 @@ footer {
   width: 100% !important;
   height: 400px !important;
 }
+
 
