@@ -559,7 +559,7 @@ function renderChart() {
   const counts = years.map(year => data.years[year].length);
 
   const ctx = document.getElementById('magazineChart').getContext('2d');
-  if (chartInstance) chartInstance.destroy(); // 销毁旧图表
+  if (chartInstance) chartInstance.destroy();
 
   chartInstance = new Chart(ctx, {
     type: currentType,
@@ -568,8 +568,8 @@ function renderChart() {
       datasets: [{
         label: '杂志数量',
         data: counts,
-        backgroundColor: currentType === "bar" 
-          ? 'rgba(54, 162, 235, 0.7)' 
+        backgroundColor: currentType === "bar"
+          ? 'rgba(54, 162, 235, 0.7)'
           : 'rgba(54, 162, 235, 0.2)',
         borderColor: 'rgba(54, 162, 235, 1)',
         borderWidth: 2,
@@ -579,42 +579,35 @@ function renderChart() {
     },
     options: {
       responsive: true,
+      maintainAspectRatio: false,
       plugins: {
-        legend: { display: false },
-        tooltip: {
-          callbacks: {
-            label: function(context) {
-              return `数量: ${context.raw}`;
-            }
-          }
-        }
+        legend: { display: false }
       },
       scales: {
-        x: {
-          title: { display: true, text: '年份' }
-        },
-        y: {
-          beginAtZero: true,
-          title: { display: true, text: '杂志数量' },
-          ticks: { precision:0 }
-        }
+        x: { title: { display: true, text: '年份' } },
+        y: { beginAtZero: true, title: { display: true, text: '杂志数量' } }
       }
     }
   });
 }
 
-// 绑定切换按钮
-document.getElementById("toggleChart").addEventListener("click", () => {
-  if (currentType === "bar") {
-    currentType = "line";
-    document.getElementById("toggleChart").textContent = "切换为柱状图";
-  } else {
-    currentType = "bar";
-    document.getElementById("toggleChart").textContent = "切换为折线图";
-  }
+window.addEventListener("DOMContentLoaded", () => {
+  renderMagazines();  // 你已有的杂志渲染
   renderChart();
+
+  document.getElementById("toggleChart").addEventListener("click", () => {
+    if (currentType === "bar") {
+      currentType = "line";
+      document.getElementById("toggleChart").textContent = "切换为柱状图";
+    } else {
+      currentType = "bar";
+      document.getElementById("toggleChart").textContent = "切换为折线图";
+    }
+    renderChart();
+  });
 });
 
 // 页面渲染
 renderMagazines();
 renderChart();
+
