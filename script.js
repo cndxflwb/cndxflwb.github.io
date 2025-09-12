@@ -606,8 +606,3 @@ window.addEventListener("DOMContentLoaded", () => {
     renderChart();
   });
 });
-
-// 页面渲染
-renderMagazines();
-renderChart();
-
