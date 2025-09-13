@@ -24,7 +24,7 @@ const data = {
             { id: 18, date: "1993年12月25日", issue: "NO.795", name: "100分", title: "王靖雯：忘掉你像忘掉我？", cover: "1993年12月25日_NO.795_100分_王靖雯：忘掉你像忘掉我？.jpg" },
             { id: 19, date: "1993年3月11日", issue: "NO.20", name: "東周刊", title: "王靖雯都市神秘女郎", cover: "1993年3月11日_NO.20_東周刊_王靖雯都市神秘女郎.jpg" },
             { id: 20, date: "1993年3月16日至22日", issue: "NO.918", name: "金電視", title: "王靖雯刻意營造不經意美", cover: "1993年3月16日至22日_NO.918_金電視_王靖雯刻意營造不經意美.jpg" },
-            { id: 21, date: "1993年3月27日至4月2日", issue: "NO.935", name: "大衆電視", title: "王靖雯：自信女天王！", cover: "1993年3月27日至4月2日_NO.935_大衆電視_王靖雯：自信女天王！.jpg" },
+            { id: 21, date: "1993年3月27日至4月2日", issue: "NO.935"， name: "大衆電視", title: "王靖雯：自信女天王！", cover: "1993年3月27日至4月2日_NO.935_大衆電視_王靖雯：自信女天王！.jpg" },
             { id: 22, date: "1993年5月4日至10日", issue: "NO.925", name: "金電視", title: "王靖雯勸歌迷珍惜光陰", cover: "1993年5月4日至10日_NO.925_金電視_王靖雯勸歌迷珍惜光陰.jpg" },
             { id: 23, date: "1993年6月8日至14日", issue: "NO.930", name: "金電視", title: "王靖雯自認蠢鈍派", cover: "1993年6月8日至14日_NO.930_金電視_王靖雯自認蠢鈍派.jpg" },
             { id: 24, date: "1993年7月27日至8月2日", issue: "NO.937", name: "金電視", title: "王靖雯飘忽的世界", cover: "1993年7月27日至8月2日_NO.937_金電視_王靖雯飘忽的世界.jpg" },
@@ -176,7 +176,7 @@ const data = {
         ],
         "2001": [{ id: 163, date: "2001年08月22日至28日", issue: "NO.16", name: "YOU优周刊", title: "王菲驾到", cover: "2001年08月22日至28日_NO.16_YOU优周刊_王菲驾到.jpg" },
             { id: 164, date: "2001年10月21日", issue: "NO.334", name: "東Touch", title: "王菲我唔鍾意霆鋒……首歌！！", cover: "2001年10月21日_NO.334_東Touch_王菲我唔鍾意霆鋒……首歌！！.jpg" },
-            { id: 165, date: "2001年10月28日至11月3日", issue: "NO.892", name: "LIFE-TV-生活电视", title: "王菲收到订情密码原形毕露", cover: "2001年10月28日至11月3日_NO.892_LIFE-TV-生活电视_王菲收到订情密码原形毕露.jpg" },
+            { id: 165, date: "2001年10月28日至11月3日", issue: "NO.892", name: "生活电视", title: "王菲收到订情密码原形毕露", cover: "2001年10月28日至11月3日_NO.892_生活电视_王菲收到订情密码原形毕露.jpg" },
             { id: 166, date: "2001年10月7日", issue: "NO.X", name: "Yomiuri-Weekly", title: "フェイ·ウォン", cover: "2001年10月7日_NO.X_Yomiuri-Weekly_フェイ·ウォン.jpg" },
             { id: 167, date: "2001年10月", issue: "NO.121", name: "ELLE-TAIWAN", title: "王菲：就憑感覺", cover: "2001年10月_NO.121_ELLE-TAIWAN_王菲：就憑感覺.jpg" },
             { id: 168, date: "2001年10月", issue: "NO.133", name: "Marie-Claire-瑪利嘉兒-HONGKONG", title: "王菲：無夢人生", cover: "2001年10月_NO.133_Marie-Claire-瑪利嘉兒-HONGKONG_王菲：無夢人生.jpg" },
@@ -606,3 +606,4 @@ window.addEventListener("DOMContentLoaded", () => {
     renderChart();
   });
 });
+
