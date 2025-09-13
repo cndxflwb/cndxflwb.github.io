@@ -129,8 +129,7 @@ const data = {
             { id: 118, date: "1998年", issue: "NO.162", name: "YES！IDOL", title: "王菲終於哭了", cover: "1998年_NO.162_YES！IDOL_王菲終於哭了.jpg" },
             { id: 119, date: "1998年", issue: "NO.5", name: "当代歌坛别册：当代歌霸", title: "那英、王菲《相约一九九八》", cover: "1998年_NO.5_当代歌坛别册：当代歌霸_那英、王菲《相约一九九八》.jpg" }
         ],
-        "1999": [{ id: 120, date: "1999年10月15日", issue: "NO.94", name: "当代歌坛", title: "封面人物：王菲", cover: "1999年10月15日_NO.94_当代歌坛_封面人物：王菲.jpg" },
-            { id: 121, date: "1999年10月15日", issue: "NO.94", name: "当代歌坛", title: "王菲：爱在思念蔓延时", cover: "1999年10月15日_NO.94_当代歌坛_王菲：爱在思念蔓延时.jpg" },
+        "1999": [{ id: 121, date: "1999年10月15日", issue: "NO.94", name: "当代歌坛", title: "王菲：爱在思念蔓延时", cover: "1999年10月15日_NO.94_当代歌坛_王菲：爱在思念蔓延时.jpg" },
             { id: 122, date: "1999年10月29日", issue: "NO.3", name: "The-Ichiban-Asia", title: "王菲", cover: "1999年10月29日_NO.3_The-Ichiban-Asia_王菲.jpg" },
             { id: 123, date: "1999年10月", issue: "NO.144", name: "ELLE-HONGKONG", title: "獨家王菲", cover: "1999年10月_NO.144_ELLE-HONGKONG_獨家王菲.jpg" },
             { id: 124, date: "1999年10月", issue: "NO.65", name: "錢櫃雜誌", title: "王菲失婚後首度專訪，這次關你的事！", cover: "1999年10月_NO.65_錢櫃雜誌_王菲失婚後首度專訪，這次關你的事！.jpg" },
@@ -606,4 +605,5 @@ window.addEventListener("DOMContentLoaded", () => {
     renderChart();
   });
 });
+
 
