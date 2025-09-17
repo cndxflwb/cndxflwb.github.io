@@ -2784,7 +2784,7 @@ function renderChart() {
     });
 }
 
-window。addEventListener("DOMContentLoaded", () => {
+window.addEventListener("DOMContentLoaded", () => {
     renderMagazines(); // 你已有的杂志渲染
     renderChart();
 
