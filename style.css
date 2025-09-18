@@ -232,13 +232,6 @@ footer {
   color: #fff;
 }
 
-/* 移动端用竖版图 */
-@media (max-width: 768px) {
-  .banner {
-    background: url("banner-mobile.jpg") center/100% no-repeat;
-  }
-}
-
 /* 遮罩层，让文字更清晰 */
 .banner::before {
   content: "";
@@ -308,6 +301,7 @@ h2 button:hover {
   width: 100% !important;
   height: 400px !important;
 }
+
 
 
 
